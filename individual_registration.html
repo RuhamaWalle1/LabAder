@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Complete Your Profile — Individual</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+  <header class="reg-header">
+    <img class="logo" src="logo labader.png" alt="Platform logo">
+    <div class="title-wrap">
+      <h1>Complete Your Profile</h1>
+      <p class="sub">Step 1 of 3 — Tell us about yourself</p>
+    </div>
+    <div class="progress" aria-hidden="true">
+      <div class="bar"><i style="width:33%"></i></div>
+    </div>
+  </header>
+
+  <div class="reg-container">
+    <div class="card">
+      <form id="individualForm" novalidate>
+        <div class="form-grid">
+          <!-- Personal -->
+          <div class="section">
+            <h2>Personal Information</h2>
+            <span class="hint">Basics so others can find you.</span>
+
+            <div class="field">
+              <label for="fullName">Full name</label>
+              <input id="fullName" name="fullName" type="text" placeholder="Your name" required>
+              <div class="error" id="err-fullName"></div>
+            </div>
+
+            <div class="field">
+              <label for="dob">Date of birth</label>
+              <input id="dob" name="dob" type="date">
+            </div>
+
+            <div class="field">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender">
+                <option value="">Choose gender</option>
+                <option>Female</option>
+                <option>Male</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Profile picture</label>
+              <div class="file-uploader">
+                <div class="preview" id="profilePreview"><span class="small">No image</span></div>
+                <div style="flex:1">
+                  <input id="profilePic" type="file" accept="image/*">
+                  <div class="small">PNG/JPG, up to 4MB</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional -->
+          <div class="section">
+            <h2>Professional Information</h2>
+            <span class="hint">Where do you work and what are you good at?</span>
+
+            <div class="field">
+              <label for="primaryField">Primary field *</label>
+              <select id="primaryField" name="primaryField" required>
+                <option value="">Select field</option>
+                <option>Software & IT</option>
+                <option>Engineering</option>
+                <option>Design & Creative</option>
+                <option>Business & Management</option>
+                <option>Data Science</option>
+                <option>Healthcare</option>
+              </select>
+              <div class="error" id="err-primaryField"></div>
+            </div>
+
+            <div class="field">
+              <label for="subField">Sub-field / Specialization</label>
+              <input id="subField" name="subField" type="text" placeholder="Frontend, Electrical, UX...">
+            </div>
+
+            <div class="field">
+              <label>Skills</label>
+              <div class="tag-input" id="skillsInput" tabindex="0" aria-label="Add skills">
+                <input id="skillInput" placeholder="Type a skill and press Enter">
+              </div>
+              <div class="small">Press Enter to add skill. Click × to remove.</div>
+              <div class="error" id="err-skills"></div>
+            </div>
+
+            <div class="field">
+              <label for="experience">Years of experience</label>
+              <input id="experience" type="number" min="0" max="60" placeholder="e.g., 3">
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="section">
+            <h2>Education</h2>
+            <span class="hint">Tell people about your academic background.</span>
+
+            <div class="field">
+              <label for="degree">Highest degree</label>
+              <select id="degree">
+                <option value="">Select degree</option>
+                <option>Bachelor's</option>
+                <option>Master's</option>
+                <option>PhD</option>
+                <option>Diploma</option>
+                <option>High School</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="institution">Institution</label>
+              <input id="institution" type="text" placeholder="University name">
+            </div>
+
+            <div class="field">
+              <label for="gradYear">Graduation year</label>
+              <input id="gradYear" type="number" min="1900" max="2100" placeholder="2020">
+            </div>
+          </div>
+
+          <!-- Contact & Social -->
+          <div class="section">
+            <h2>Contact & Social</h2>
+            <span class="hint">How can employers contact you or view your portfolio?</span>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="you@example.com" required>
+              <div class="error" id="err-email"></div>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" type="tel" placeholder="+251 ...">
+            </div>
+
+            <div class="field">
+              <label for="linkedin">LinkedIn / GitHub / Portfolio</label>
+              <input id="linkedin" type="text" placeholder="https://...">
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="form-actions">
+          <button type="button" class="btn ghost" id="loadDraftBtn">Load Draft</button>
+          <div style="flex:1"></div>
+          <button type="button" class="btn ghost" id="saveDraftBtn">Save Draft</button>
+          <button type="button" class="btn primary" id="nextBtn">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/individual_reg.js"></script>
+</body>
+</html>

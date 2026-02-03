@@ -1,0 +1,49 @@
+/* main.css
+   Auth pages: Login, Signup, Reset
+   Responsive: desktop / tablet / phone
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+
+:root{
+  --brand:#1d4ed8;
+  --muted:#6b7280;
+  --bg:#f8fafc;
+  --card:#fff;
+  --radius:12px;
+}
+
+/* reset */
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--bg);margin:0;color:#0f172a}
+a{color:var(--brand);text-decoration:none}
+img{max-width:100%;display:block}
+
+/* centered auth container */
+.container-auth{max-width:440px;margin:72px auto;padding:20px}
+.card-auth{background:var(--card);padding:28px;border-radius:16px;box-shadow:0 12px 40px rgba(2,6,23,0.06);text-align:center}
+.header{display:flex;justify-content:center;align-items:center;padding:8px 0;color:var(--brand)}
+.header img{height:56px}
+h1.underline{font-size:18px;margin:8px 0 18px 0;color:#111827}
+
+/* inputs & controls */
+input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(2,6,23,0.06);margin-bottom:12px;font-size:15px;outline:none}
+input::placeholder{color:#9aa0a6}
+input:focus{box-shadow:0 12px 30px rgba(29,78,216,0.06);border-color:var(--brand)}
+.checkbox{font-size:14px;color:var(--brand);display:inline-flex;gap:8px;align-items:center}
+.small{font-size:13px;color:var(--muted)}
+a{font-weight:700}
+
+/* buttons */
+.btn-auth{margin-top:8px;padding:12px 14px;border-radius:12px;border:none;background:var(--brand);color:#fff;font-weight:800;cursor:pointer;box-shadow:0 12px 30px rgba(37,99,235,0.12)}
+.btn-ghost{background:transparent;border:1px solid rgba(2,6,23,0.06);padding:10px 12px;border-radius:12px}
+
+/* footer small */
+.footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+
+/* tablet narrower */
+@media (max-width:420px){
+  .container-auth{margin:36px 16px}
+  .card-auth{padding:20px}
+  input{padding:10px 12px}
+  .header img{height:48px}
+}

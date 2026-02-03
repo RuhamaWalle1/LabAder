@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home — Individual</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <header class="header">
+    <div class="left">
+      <img class="logo" src="logo labader.png" alt="logo">
+      <button class="icon-btn" id="menuBtn">☰</button>
+    </div>
+
+    <div class="search">
+      <input id="globalSearch" placeholder="Search people, jobs, posts...">
+      <button class="icon-btn" id="searchBtn">🔍</button>
+    </div>
+
+    <div class="icons">
+      <button class="icon-btn" id="notifBtn">🔔<span id="notifCount" style="margin-left:6px;color:var(--brand);font-weight:700">2</span></button>
+      <button class="icon-btn" id="msgBtn">💬</button>
+      <div class="profile-btn" id="profileBtn"><img src="avatar-placeholder.png" alt="me" style="width:28px;height:28px;border-radius:6px">Me ▾</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="layout">
+      <aside class="left-aside">
+        <div class="card profile-card">
+          <img src="avatar-placeholder.png" alt="avatar">
+          <div>
+            <div style="font-weight:800">Jane Doe</div>
+            <div style="font-size:13px;color:var(--muted)">Software Developer</div>
+            <div style="margin-top:6px"><small class="small">Field: Software & IT</small></div>
+          </div>
+        </div>
+
+        <div class="card nav-list" style="margin-top:12px">
+          <a href="#" id="homeNav">Home</a>
+          <a href="#" id="jobsNav">Jobs</a>
+          <a href="#" id="connectionsNav">Connections</a>
+          <a href="#" id="savedNav">Saved</a>
+          <a href="#" id="profileNav">Profile</a>
+        </div>
+      </aside>
+
+      <main class="center">
+        <div class="post-box card">
+          <img src="avatar-placeholder.png" alt="me">
+          <div class="post-compose">
+            <textarea id="postText" placeholder="Share an update, project or question..."></textarea>
+            <div class="post-actions">
+              <div>
+                <input id="fileAttach" type="file" style="display:none">
+                <button class="btn ghost" id="attachBtn">Attach</button>
+                <button class="btn ghost" id="postJobBtn">Jobs</button>
+              </div>
+              <div>
+                <button class="btn ghost" id="savePostBtn">Save draft</button>
+                <button class="btn primary" id="publishBtn">Post</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="feed">
+          <!-- feed populated by individual_home.js -->
+        </div>
+      </main>
+
+      <aside class="right-aside">
+        <div class="card">
+          <h3 style="margin:0 0 8px 0">People you may know</h3>
+          <div class="suggest-list" id="suggestions"></div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin:0 0 8px 0">Trending skills</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:8px">
+            <span class="tag">React</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Data Science</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="footer card" style="margin-top:16px">© 2026 Lab-Ader · Built for professionals</div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button id="bnHome">Home</button>
+    <button id="bnSearch">Search</button>
+    <button id="bnPost">Post</button>
+    <button id="bnJobs">Jobs</button>
+    <button id="bnProfile">Profile</button>
+  </nav>
+
+  <script src="js/individual_home.js"></script>
+</body>
+</html>

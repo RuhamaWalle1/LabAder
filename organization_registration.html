@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Complete Company Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+  <header class="reg-header">
+    <img class="logo" src="logo labader.png" alt="Platform logo">
+    <div class="title-wrap">
+      <h1>Complete Company Profile</h1>
+      <p class="sub">Step 1 of 2 — Company details</p>
+    </div>
+    <div class="progress" aria-hidden="true">
+      <div class="bar"><i style="width:50%"></i></div>
+    </div>
+  </header>
+
+  <div class="reg-container">
+    <div class="card">
+      <form id="orgForm" novalidate>
+        <div class="form-grid org-grid">
+          <!-- Company Info -->
+          <div class="section">
+            <h2>Company Information</h2>
+            <span class="hint">Public profile shown to candidates.</span>
+
+            <div class="field">
+              <label for="companyName">Company name</label>
+              <input id="companyName" type="text" required>
+              <div class="error" id="err-companyName"></div>
+            </div>
+
+            <div class="field">
+              <label for="industry">Industry</label>
+              <select id="industry" required>
+                <option value="">Select industry</option>
+                <option>Software & IT</option>
+                <option>Engineering</option>
+                <option>Design</option>
+                <option>Healthcare</option>
+                <option>Data Science & Analysis</option>
+                <option>Business & Management</option>
+              </select>
+              <div class="error" id="err-industry"></div>
+            </div>
+
+            <div class="field">
+              <label for="description">About the company</label>
+              <textarea id="description" placeholder="Short description (mission, what you build)"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Company logo</label>
+              <div class="file-uploader">
+                <div class="preview" id="logoPreview"><span class="small">No logo</span></div>
+                <div style="flex:1">
+                  <input id="companyLogo" type="file" accept="image/*">
+                  <div class="small">PNG/JPG, up to 4MB</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location & Contact -->
+          <div class="section">
+            <h2>Location & Contact</h2>
+            <span class="hint">How candidates will reach you.</span>
+
+            <div class="field">
+              <label for="city">City</label>
+              <input id="city" type="text" placeholder="Add city">
+            </div>
+
+            <div class="field">
+              <label for="state">State / Region</label>
+              <input id="state" type="text" placeholder="Add state">
+            </div>
+
+            <div class="field">
+              <label for="country">Country</label>
+              <input id="country" type="text" placeholder="Country">
+            </div>
+
+            <div class="field">
+              <label for="orgEmail">Contact email *</label>
+              <input id="orgEmail" type="email" required placeholder="hr@company.com">
+              <div class="error" id="err-orgEmail"></div>
+            </div>
+
+            <div class="field">
+              <label for="orgPhone">Contact phone</label>
+              <input id="orgPhone" type="tel" placeholder="+251 ...">
+            </div>
+
+            <div class="field">
+              <label for="website">Website</label>
+              <input id="website" type="text" placeholder="https://company.example">
+            </div>
+          </div>
+
+          <!-- HR Contact & Social -->
+          <div class="section">
+            <h2>HR Contact & Social</h2>
+            <span class="hint">Optional contact person for applicants.</span>
+
+            <div class="field">
+              <label for="hrName">HR / Contact name</label>
+              <input id="hrName" type="text" placeholder="Full name">
+            </div>
+
+            <div class="field">
+              <label for="hrRole">Role / Position</label>
+              <input id="hrRole" type="text" placeholder="Talent Manager">
+            </div>
+
+            <div class="field">
+              <label for="hrEmail">HR Email</label>
+              <input id="hrEmail" type="email" placeholder="hr@example.com">
+            </div>
+
+            <div class="field">
+              <label for="linkedinCompany">LinkedIn / Twitter / GitHub</label>
+              <input id="linkedinCompany" type="text" placeholder="https://...">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn ghost" id="loadOrgDraft">Load Draft</button>
+          <div style="flex:1"></div>
+          <button type="button" class="btn ghost" id="saveOrgDraft">Save Draft</button>
+          <button type="button" class="btn primary" id="submitOrg">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/organization_reg.js"></script>
+</body>
+</html>

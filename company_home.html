@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home — Company</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <header class="header">
+    <div class="left">
+      <img class="logo" src="logo labader.png" alt="logo">
+      <button class="icon-btn" id="menuBtnC">☰</button>
+    </div>
+
+    <div class="search">
+      <input id="globalSearchC" placeholder="Search candidates, jobs, posts...">
+      <button class="icon-btn" id="searchBtnC">🔍</button>
+    </div>
+
+    <div class="icons">
+      <button class="icon-btn" id="notifBtnC">🔔<span id="notifCountC" style="margin-left:6px;color:var(--brand);font-weight:700">1</span></button>
+      <button class="icon-btn" id="msgBtnC">💬</button>
+      <div class="profile-btn" id="companyProfileBtn"><img src="company-placeholder.png" alt="logo" style="width:28px;height:28px;border-radius:6px">Acme ▾</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="layout">
+      <aside class="left-aside">
+        <div class="card profile-card">
+          <img src="company-placeholder.png" alt="logo">
+          <div>
+            <div style="font-weight:800">Acme Corporation</div>
+            <div style="font-size:13px;color:var(--muted)">Hiring: Frontend, Backend</div>
+            <div style="margin-top:6px"><small class="small">Field: Software & IT</small></div>
+          </div>
+        </div>
+
+        <div class="card nav-list" style="margin-top:12px">
+          <a href="#" id="dashboardNav">Dashboard</a>
+          <a href="#" id="postJobNav">Post Job</a>
+          <a href="#" id="manageJobsNav">Manage Jobs</a>
+          <a href="#" id="candidatesNav">Candidates</a>
+          <a href="#" id="analyticsNav">Analytics</a>
+        </div>
+      </aside>
+
+      <main class="center">
+        <!-- Post job composer -->
+        <div class="post-box card">
+          <div>
+            <img src="company-placeholder.png" alt="logo" style="width:56px;height:56px;border-radius:10px">
+          </div>
+          <div class="post-compose">
+            <input id="jobTitle" placeholder="Job title (e.g., Frontend Developer)" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(2,6,23,0.06)">
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <input id="jobLocation" placeholder="Location" style="padding:8px;border-radius:10px;border:1px solid rgba(2,6,23,0.06);flex:1">
+              <select id="jobType" style="padding:8px;border-radius:10px;border:1px solid rgba(2,6,23,0.06)">
+                <option>Full-time</option><option>Part-time</option><option>Contract</option><option>Remote</option>
+              </select>
+            </div>
+            <textarea id="jobDesc" placeholder="Short job description" style="width:100%;margin-top:8px;padding:10px;border-radius:10px;border:1px solid rgba(2,6,23,0.06)"></textarea>
+            <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:10px">
+              <button class="btn ghost" id="saveJobDraft">Save draft</button>
+              <button class="btn primary" id="postJobBtnC">Post job</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="jobsList">
+          <!-- JS will render job cards here -->
+        </div>
+      </main>
+
+      <aside class="right-aside">
+        <div class="card">
+          <h3 style="margin:0 0 8px 0">Suggested candidates</h3>
+          <div class="suggest-list" id="candidateSuggestions"></div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin:0 0 8px 0">Company Insights</h3>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font-weight:700">Active Jobs: <span id="insJobs">0</span></div>
+            <div style="font-weight:700">Views (30d): <span id="insViews">0</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="footer card" style="margin-top:16px">© 2026 Lab-Ader · Employer tools</div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button id="cbHome">Home</button>
+    <button id="cbPost">Post</button>
+    <button id="cbJobs">Jobs</button>
+    <button id="cbCandidates">Candidates</button>
+    <button id="cbProfile">Profile</button>
+  </nav>
+
+  <script src="js/company_home.js"></script>
+</body>
+</html>

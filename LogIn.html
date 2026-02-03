@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Log In — LabAder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="container-auth">
+    <div class="header">
+      <img src="logo labader.png" alt="LabAder">
+    </div>
+
+    <div class="card-auth">
+      <h1 class="underline">LOGIN</h1>
+
+      <form id="loginForm">
+        <input id="loginEmail" type="text" placeholder="Email">
+        <input id="loginPassword" type="password" placeholder="Password">
+        <div style="display:flex;gap:12px;justify-content:center;margin-bottom:12px">
+          <label class="checkbox"><input type="radio" name="userType" value="INDIVIDUAL" checked> Individual</label>
+          <label class="checkbox"><input type="radio" name="userType" value="COMPANY"> Organization</label>
+        </div>
+
+        <div style="display:flex;justify-content:center;gap:10px;margin-bottom:10px">
+          <a href="ResetP.html" class="small">Forgot password?</a>
+        </div>
+
+        <button class="btn-auth" type="submit">LOG IN</button>
+      </form>
+
+      <p class="small" style="margin-top:14px">Don’t have an account? <a href="SignUp.html">Sign Up</a></p>
+    </div>
+
+    <div class="footer">&copy; 2026 Lab-Ader</div>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

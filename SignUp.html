@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sign Up — LabAder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="container-auth">
+    <div class="header">
+      <img src="logo labader.png" alt="LabAder">
+    </div>
+
+    <div class="card-auth">
+      <h1 class="underline">SIGN UP</h1>
+
+      <form id="signupForm">
+        <input id="signupEmail" type="text" placeholder="Email">
+        <input id="signupPassword" type="password" placeholder="New password">
+        <input id="signupConfirm" type="password" placeholder="Confirm password">
+
+        <div style="display:flex;gap:12px;justify-content:center;margin:12px 0">
+          <label class="checkbox"><input type="radio" name="userType" value="INDIVIDUAL" checked> Individual</label>
+          <label class="checkbox"><input type="radio" name="userType" value="COMPANY"> Organization</label>
+        </div>
+
+        <button class="btn-auth" type="submit">SIGN UP</button>
+      </form>
+
+      <p class="small" style="margin-top:12px">Already have an account? <a href="LogIn.html">Login</a></p>
+    </div>
+
+    <div class="footer">&copy; 2026 Lab-Ader</div>
+  </div>
+
+  <script src="js/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* registration.css
+   Registration pages (individual & company)
+   Responsive: 3-column-ish layout on wide screens, 1-2 columns on tablet/phone
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+
+:root{
+  --brand:#1d4ed8;
+  --muted:#6b7280;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --radius:12px;
+  --gap:18px;
+}
+
+/* reset */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--bg);color:#0f172a;-webkit-font-smoothing:antialiased}
+
+/* header */
+header.reg-header{background:linear-gradient(180deg, rgba(29,78,216,0.04), transparent);padding:16px 22px;display:flex;align-items:center;gap:18px;position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(15,23,42,0.03)}
+header.reg-header img.logo{height:54px}
+header.reg-header .title-wrap h1{margin:0;font-size:18px;color:var(--brand);font-weight:800}
+header.reg-header .title-wrap p.sub{margin:0;color:var(--muted);font-size:13px}
+
+/* progress */
+.progress{margin-left:auto;min-width:160px;max-width:420px}
+.progress .bar{height:8px;background:rgba(15,23,42,0.06);border-radius:999px;overflow:hidden}
+.progress .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--brand),#2563eb);width:33%;transition:width .25s}
+
+/* container & card */
+.reg-container{max-width:1200px;margin:28px auto;padding:18px}
+.card{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 10px 30px rgba(2,6,23,0.05)}
+
+/* grid layouts */
+/* Desktop default: 2 columns for individual, 3 columns for org (set .org-grid on container) */
+.form-grid{display:grid;gap:var(--gap);grid-template-columns:repeat(2,1fr);align-items:start}
+.form-grid.org-grid{grid-template-columns:1.2fr 1fr 1fr}
+
+/* fields */
+.section h2{margin:0 0 8px 0;font-size:16px;font-weight:800}
+.hint{display:block;color:var(--muted);font-size:13px;margin-bottom:10px}
+.field{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.field label{font-size:13px;color:#111827;font-weight:700}
+.field input[type="text"], .field input[type="email"], .field input[type="tel"], .field input[type="number"], .field input[type="date"], .field select, .field textarea{
+  padding:10px 12px;border-radius:10px;border:1px solid rgba(2,6,23,0.06);background:#fff;font-size:14px;outline:none}
+.field textarea{min-height:110px;resize:vertical}
+
+/* file upload / preview */
+.file-uploader{display:flex;gap:12px;align-items:center}
+.preview{width:84px;height:84px;border-radius:12px;background:linear-gradient(180deg,#f8fafc,#fff);display:flex;align-items:center;justify-content:center;border:1px dashed rgba(2,6,23,0.06);overflow:hidden}
+.preview img{width:100%;height:100%;object-fit:cover}
+
+/* tag input */
+.tag-input{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:8px;border-radius:10px;border:1px solid rgba(2,6,23,0.06);background:#fff;min-height:46px}
+.tag-input input{border:none;outline:none;flex:1 1 140px;padding:6px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:rgba(29,78,216,0.08);color:var(--brand);padding:6px 8px;border-radius:999px;font-size:13px;font-weight:700}
+.tag .remove{cursor:pointer;font-weight:900}
+
+/* helpers */
+.small{font-size:12px;color:var(--muted)}
+.error{color:#b91c1c;font-size:12px;margin-top:6px}
+
+/* actions */
+.form-actions{display:flex;gap:12px;align-items:center;justify-content:flex-end;margin-top:18px}
+.btn{border:none;padding:10px 16px;border-radius:12px;font-weight:800;cursor:pointer}
+.btn.primary{background:var(--brand);color:#fff;box-shadow:0 8px 30px rgba(37,99,235,0.12)}
+.btn.ghost{background:transparent;border:1px solid rgba(2,6,23,0.06);color:#0f172a}
+
+/* TABLET & PHONE ADJUSTMENTS */
+
+/* Tablet (<=1024px): collapse to single column or stacked columns */
+@media (max-width:1024px){
+  .form-grid{grid-template-columns:1fr}
+  .form-grid.org-grid{grid-template-columns:1fr}
+  header.reg-header{padding:12px 16px}
+  .progress{min-width:140px}
+}
+
+/* Mobile (<=768px): sticky bottom actions, full-width inputs, larger touch targets */
+@media (max-width:768px){
+  .reg-container{padding:12px}
+  .form-grid{grid-template-columns:1fr}
+  .form-actions{
+    position:fixed;left:0;right:0;bottom:0;padding:12px;background:rgba(255,255,255,0.98);
+    box-shadow:0 -10px 30px rgba(2,6,23,0.06);justify-content:space-between;z-index:80
+  }
+  .reg-container{padding-bottom:110px}
+  .field input, .field select, .field textarea{font-size:15px;padding:12px}
+  .btn{padding:12px 16px}
+}
+
+/* wide screens */
+@media (min-width:1400px){
+  .reg-container{max-width:1400px}
+  .form-grid{gap:24px}
+}
